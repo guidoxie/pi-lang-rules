@@ -10,7 +10,7 @@ pi 包：extension 在 `before_agent_start` 时探测项目语言，把对应规
 ```bash
 mkdir -p /tmp/lr-test && cd /tmp/lr-test
 printf 'module x\ngo 1.22\n' > go.mod   # 按需换成其他 marker（tsconfig.json / index.html …）
-pi -p "只回复: 收到"
+pi -e <本仓库路径> -p "只回复: 收到"   # -e 单次加载包，不写入 settings，不依赖本机安装
 ```
 
 然后从最新 session 读 system message 验证：
@@ -58,8 +58,7 @@ hooks/agents 机制、`~/.claude` 路径、Claude 模型名与快捷键都曾在
 
 完成标准：上文的验证流程对该语言 marker 命中、对无关项目不命中。
 
-## 发布语义
+## 提交
 
-本机安装是 local source（`pi install ./pi-lang-rules`），改文件即时生效，无需 reinstall。
-git/npm 用户 pin 在安装时的 commit——所以每次改动都要 commit + push（中文
+用户通过 git 安装，pin 在安装时的 commit：每次改动 commit + push（中文
 `<type>: <说明>` 格式），否则下游拿不到更新。
