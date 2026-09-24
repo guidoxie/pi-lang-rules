@@ -1,0 +1,14 @@
+{
+	"name": "pi-lang-rules",
+	"version": "0.1.0",
+	"description": "Auto-inject language-specific coding practice rules into the system prompt based on detected project languages",
+	"type": "module",
+	"keywords": ["pi-package"],
+	"license": "MIT",
+	"pi": {
+		"extensions": ["./extensions/*.ts"]
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*"
+	}
+}
