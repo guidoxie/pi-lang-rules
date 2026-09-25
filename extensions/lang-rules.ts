@@ -172,7 +172,7 @@ export default function langRulesExtension(pi: ExtensionAPI) {
 		cachedRules = loadRules(ctx.cwd, ctx.isProjectTrusted());
 		if (cachedRules.length > 0) {
 			const langs = cachedRules.map((r) => r.lang).join(", ");
-			ctx.ui.notify(`lang-rules: 已加载规范 → ${langs}`, "info");
+			ctx.ui.notify(`lang-rules: loaded rules → ${langs}`, "info");
 		}
 	});
 
