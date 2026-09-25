@@ -1,8 +1,5 @@
 # python 工程规范
 
-> 来源: github.com/affaan-m/ECC (MIT)，合并自 rules/python/。
-
-
 ---
 
 # Python Coding Style
@@ -101,10 +98,6 @@ api_key = os.environ["OPENAI_API_KEY"]  # Raises KeyError if missing
   bandit -r src/
   ```
 
-## Reference
-
-See skill: `django-security` for Django-specific security guidelines (if applicable).
-
 ---
 
 # Python Testing
@@ -139,3 +132,28 @@ def test_database_connection():
 ## Reference
 
 See skill: `python-testing` for detailed pytest patterns and fixtures.
+
+---
+
+# Python Project Management
+
+## Tooling
+
+- Use **uv** for project and dependency management — do not mix in pip, poetry, or pdm workflows
+- Commit `uv.lock` for reproducible installs
+
+## Common Commands
+
+```bash
+uv init                      # create a new project (pyproject.toml)
+uv add requests              # add a runtime dependency
+uv add --dev pytest          # add a dev dependency
+uv sync                      # create .venv and install exact locked versions
+uv run pytest                # run tools inside the project environment
+uvx ruff check .             # run a tool without installing it
+```
+
+## Python Versions
+
+- Pin the project interpreter with `uv python pin <version>` (writes `.python-version`)
+- Do not manage Python versions manually

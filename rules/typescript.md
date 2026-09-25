@@ -1,8 +1,5 @@
 # typescript 工程规范
 
-> 来源: github.com/affaan-m/ECC (MIT)，合并自 rules/typescript/。
-
-
 ---
 
 # TypeScript/JavaScript Coding Style
@@ -195,7 +192,6 @@ const validated: UserInput = userSchema.parse(input)
 
 - No `console.log` statements in production code
 - Use proper logging libraries instead
-- See hooks for automatic detection
 
 ---
 
@@ -263,10 +259,6 @@ if (!apiKey) {
 }
 ```
 
-## Agent Support
-
-- Use **security-reviewer** skill for comprehensive security audits
-
 ---
 
 # TypeScript/JavaScript Testing
@@ -276,6 +268,4 @@ if (!apiKey) {
 
 Use **Playwright** as the E2E testing framework for critical user flows.
 
-## Agent Support
-
-- **e2e-runner** - Playwright E2E testing specialist
+See skill: `e2e-testing` for detailed Playwright patterns, Page Object Model, and flaky test strategies.

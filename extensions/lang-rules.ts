@@ -6,7 +6,7 @@
  * 2. <agent-dir>/rules/<name>.md   用户覆盖（agent-dir 默认 ~/.pi/agent）
  * 3. <package>/rules/<name>.md     包内置默认
  *
- * 支持语言: typescript / python / go / html / css + common 基线
+ * 支持语言: typescript / python / go / web + common 基线
  * 规范来源: github.com/affaan-m/ECC (MIT)，清洗合并后使用。
  *
  * 注入方式: before_agent_start 中就地修改 systemPromptOptions.sections
@@ -34,8 +34,7 @@ const LANG_SPECS: Record<string, LangSpec> = {
 	typescript: { files: ["tsconfig.json"] },
 	python: { files: ["pyproject.toml", "requirements.txt", "setup.py", "setup.cfg", "Pipfile", ".python-version"] },
 	go: { files: ["go.mod"] },
-	html: { globs: ["*.html"] },
-	css: { globs: ["*.css", "*.scss", "*.less"] },
+	web: { globs: ["*.html", "*.css", "*.scss", "*.less"] },
 };
 
 // TypeScript 补充守卫: 无 tsconfig 但有 package.json + 浅层 .ts 文件也算 TS 项目
