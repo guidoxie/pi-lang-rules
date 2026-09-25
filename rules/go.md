@@ -1,8 +1,5 @@
 # go 工程规范
 
-> 来源: github.com/affaan-m/ECC (MIT)，合并自 rules/golang/。
-
-
 ---
 
 # Go Coding Style

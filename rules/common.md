@@ -1,7 +1,5 @@
 # 通用工程规范（Common）
 
-> 来源: github.com/affaan-m/ECC (MIT)，精选自 rules/common/，适用于所有语言。
-
 ---
 
 # Coding Style
@@ -159,11 +157,9 @@ MANDATORY workflow:
 
 ## Troubleshooting Test Failures
 
-2. Check test isolation
-3. Verify mocks are correct
-4. Fix implementation, not tests (unless tests are wrong)
-
-## Agent Support
+1. Check test isolation
+2. Verify mocks are correct
+3. Fix implementation, not tests (unless tests are wrong)
 
 ## Test Structure (AAA Pattern)
 
@@ -220,9 +216,9 @@ Before ANY commit:
 
 If security issue found:
 1. STOP immediately
-3. Fix CRITICAL issues before continuing
-4. Rotate any exposed secrets
-5. Review entire codebase for similar issues
+2. Fix CRITICAL issues before continuing
+3. Rotate any exposed secrets
+4. Review entire codebase for similar issues
 
 ---
 
@@ -244,6 +240,6 @@ Lower context sensitivity tasks:
 ## Build Troubleshooting
 
 If build fails:
-2. Analyze error messages
-3. Fix incrementally
-4. Verify after each fix
+1. Analyze error messages
+2. Fix incrementally
+3. Verify after each fix
