@@ -60,5 +60,18 @@ prompt，路由由 skill 自己的 description 完成。rules 文件里可以写
 1. `rules/` 下新建 `<lang>.md`（文件名即语言 id）
 2. `LANG_SPECS` 加一行探测 marker：`files`（精确文件名）或 `globs`（浅层后缀，如 `"*.html"`）
 
-完成标准：上文的验证流程对该语言 marker 命中、对无关项目不命中。
+完成标准：`./verify.sh` 对该语言 marker 命中、对无关项目不命中。
+
+## 验证（改动后必须执行）
+
+./verify.sh
+
+脚本自动建 4 个临时项目（go / web / python / 无关 marker），逐个跑 `pi -p`，从最新
+session 的 system message 断言：命中语言、内容特征、死引用零残留、5 个 skills 均被
+广告。退出码 0 = 全过，临时目录自动清理。
+
+注意：脚本验证的是**已安装副本**（settings.json 里的 git 安装），工作流为
+改动 → commit + push → `pi install git:github.com/guidoxie/pi-lang-rules` → `./verify.sh`。
+不要用 `pi -e` 验证本仓库工作目录——实测 -e 链路会被已安装副本遮蔽，结果不可信。
+新增 skill 或调整断言特征时，同步更新脚本内的用例表与断言。
 
