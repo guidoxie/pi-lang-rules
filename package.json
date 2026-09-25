@@ -3,13 +3,23 @@
 	"version": "0.1.0",
 	"description": "Auto-inject language-specific coding practice rules into the system prompt based on detected project languages",
 	"type": "module",
-	"keywords": ["pi-package"],
+	"keywords": [
+		"pi-package"
+	],
 	"license": "MIT",
 	"pi": {
-		"extensions": ["./extensions/*.ts"],
-		"skills": ["./skills"]
+		"extensions": [
+			"./extensions/*.ts"
+		],
+		"skills": [
+			"./skills"
+		]
 	},
 	"peerDependencies": {
 		"@earendil-works/pi-coding-agent": "*"
+	},
+	"devDependencies": {
+		"@earendil-works/pi-coding-agent": "^0.87.1",
+		"@types/node": "^26.6.2"
 	}
 }
